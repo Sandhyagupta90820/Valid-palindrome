@@ -1,0 +1,19 @@
+# Define the function before using it
+def is_valid_palindrome(text):
+    # Remove non-alphanumeric characters and convert to lowercase
+    cleaned = ''.join(char.lower() for char in text if char.isalnum())
+    return cleaned == cleaned[::-1]
+
+# Main program starts here
+while True:
+    user_input = input("Enter a word, number or sentence: ")
+
+    if is_valid_palindrome(user_input):
+        print("It is a valid palindrome!")
+    else:
+        print("It is NOT a palindrome.")
+
+    again = input("Do you want to check another? (yes/no): ").lower()
+    if again != "yes":
+        print("Program ended.")
+        break
